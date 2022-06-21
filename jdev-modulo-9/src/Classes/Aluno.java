@@ -6,6 +6,7 @@ package Classes;
  */
 public class Aluno {
 	
+//	Esses são os atributos do Aluno
 	String nome;
 	int idade;
 	String dataNascimento;
