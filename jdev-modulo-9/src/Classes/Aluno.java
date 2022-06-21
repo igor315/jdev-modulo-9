@@ -18,4 +18,21 @@ public class Aluno {
 	String serieMatriculado;
 	
 
+	
+//	O construtor cria dados na memória - sendo padrão do Java
+//	Quando não criamos nenhum construtor, este objeto Aluno vem como default mesmo que não esteja escrito aqui
+	public Aluno() {
+		
+	}
+
+	public Aluno(String nomePadrao) {
+		this.nome = nomePadrao;
+	}
+	
+	
+//	Criamos esse construtor para receber valores definidos
+	public Aluno(String nomePadrao, int idadePadrao) {
+		this.nome = nomePadrao;
+		this.idade = idadePadrao;
+	}
 }
