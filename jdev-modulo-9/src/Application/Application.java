@@ -6,8 +6,6 @@ public class Application {
 
 	public static void main(String[] args) {
 		
-//		Aluno1 é uma referência para o objeto Aluno
-//		new Aluno() é uma instância(Criação de Objeto)
 		Aluno aluno1 = new Aluno();
 		aluno1.setNome("Matew");
 		aluno1.setDataNascimento("01/07/2000");
@@ -18,8 +16,11 @@ public class Application {
 		aluno1.setNomePai("Sebastiao Texeira");
 		aluno1.setDataMatricula("10/01/2020");
 		aluno1.setNomeEscola("JDEV treinamentos");
-		
-//		recuperamos os dados atraves do aluno1.getNome();
+		aluno1.setNota1(90);
+		aluno1.setNota2(80.8);
+		aluno1.setNota3(70.9);
+		aluno1.setNota4(90.7);
+
 		System.out.println("Nome do aluno1 = " + aluno1.getNome());
 		System.out.println("Data de nascimento = " + aluno1.getDataNascimento());
 		System.out.println("Idade = " + aluno1.getIdade());
@@ -29,9 +30,10 @@ public class Application {
 		System.out.println("Nome do pai = " + aluno1.getNomePai());
 		System.out.println("Data da matrícula  = " + aluno1.getDataMatricula());
 		System.out.println("Nome da escola = " + aluno1.getNomeEscola());
+		System.out.println("Média da nota é = " + (int)aluno1.getMediaNota());
 		
 		
-//		Nome do aluno2 "Maria" é um exemplo de atributo do Objeto
+
 		Aluno aluno2 = new Aluno("Maria");
 		
 		Aluno aluno3 = new Aluno("Joao", 15);

@@ -6,7 +6,6 @@ package Classes;
  */
 public class Aluno {
 	
-//	Esses são os atributos do Aluno
 	String nome;
 	int idade;
 	String dataNascimento;
@@ -17,11 +16,11 @@ public class Aluno {
 	String dataMatricula;
 	String nomeEscola;
 	String serieMatriculado;
+	double nota1;
+	double nota2;
+	double nota3;
+	double nota4;
 	
-
-	
-//	O construtor cria dados na memória - sendo padrão do Java
-//	Quando não criamos nenhum construtor, este objeto Aluno vem como default mesmo que não esteja escrito aqui
 	public Aluno() {
 		
 	}
@@ -29,20 +28,12 @@ public class Aluno {
 	public Aluno(String nomePadrao) {
 		this.nome = nomePadrao;
 	}
-	
-	
-//	Criamos esse construtor para receber valores definidos
+
 	public Aluno(String nomePadrao, int idadePadrao) {
 		this.nome = nomePadrao;
 		this.idade = idadePadrao;
 	}
-	
-//	Veremos os metodos SETTERS e GETTERS do objeto
-//	SET é para adicionar ou receber dados para os atributos
-//	GET é para resgatar ou obter o valor dos atributos
 
-	
-//	retorna os dados
 	public String getNome() {
 		return nome;
 	}
@@ -123,7 +114,43 @@ public class Aluno {
 	public void setSerieMatriculado(String serieMatriculado) {
 		this.serieMatriculado = serieMatriculado;
 	}
+
+	public double getNota1() {
+		return nota1;
+	}
+
+	public void setNota1(double nota1) {
+		this.nota1 = nota1;
+	}
+
+	public double getNota2() {
+		return nota2;
+	}
+
+	public void setNota2(double nota2) {
+		this.nota2 = nota2;
+	}
+
+	public double getNota3() {
+		return nota3;
+	}
+
+	public void setNota3(double nota3) {
+		this.nota3 = nota3;
+	}
+
+	public double getNota4() {
+		return nota4;
+	}
+
+	public void setNota4(double nota4) {
+		this.nota4 = nota4;
+	}
 	
+//	Método que retorna a média do aluno
+	public double getMediaNota() {
+		return (nota1 + nota2 + nota3 + nota4) / 4;
+	}
 
 	
 }
