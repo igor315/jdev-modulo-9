@@ -1,25 +1,42 @@
 package Application;
 
+import javax.swing.JOptionPane;
+
 import Classes.Aluno;
 
 public class Application {
 
 	public static void main(String[] args) {
 		
+		String nome = JOptionPane.showInputDialog("Qual o nome do aluno?");
+		String idade = JOptionPane.showInputDialog("Qual a idade?");
+		String dataNascimento = JOptionPane.showInputDialog("Data de nascimento?");
+		String rg = JOptionPane.showInputDialog("Registro Geral?");
+		String cpf = JOptionPane.showInputDialog("Qual o CPF?");
+		String mae = JOptionPane.showInputDialog("Nome da mãe?");
+		String pai = JOptionPane.showInputDialog("Nome do pai?");
+		String matricula = JOptionPane.showInputDialog("Data da matricula?");
+		String serie = JOptionPane.showInputDialog("Qual a série?");
+		String escola = JOptionPane.showInputDialog("Nome da escola?");
+		String nota1 = JOptionPane.showInputDialog("Nota 1?");
+		String nota2 = JOptionPane.showInputDialog("Nota 2?");
+		String nota3 = JOptionPane.showInputDialog("Nota 3?");
+		String nota4 = JOptionPane.showInputDialog("Nota 4?");
+		
 		Aluno aluno1 = new Aluno();
-		aluno1.setNome("Matew");
-		aluno1.setDataNascimento("01/07/2000");
-		aluno1.setIdade(22);
-		aluno1.setRegistroGeral("222-22");
-		aluno1.setNumeroCpf("111-111-111-11");
-		aluno1.setNomeMae("Maria Antonia");
-		aluno1.setNomePai("Sebastiao Texeira");
-		aluno1.setDataMatricula("10/01/2020");
-		aluno1.setNomeEscola("JDEV treinamentos");
-		aluno1.setNota1(90);
-		aluno1.setNota2(80.8);
-		aluno1.setNota3(70.9);
-		aluno1.setNota4(90.7);
+		aluno1.setNome(nome);
+		aluno1.setIdade(Integer.valueOf(idade));
+		aluno1.setDataNascimento(dataNascimento);
+		aluno1.setRegistroGeral(rg);
+		aluno1.setNumeroCpf(cpf);
+		aluno1.setNomeMae(mae);
+		aluno1.setNomePai(pai);
+		aluno1.setDataMatricula(matricula);
+		aluno1.setNomeEscola(escola);
+		aluno1.setNota1(Integer.valueOf(nota1));
+		aluno1.setNota2(Integer.valueOf(nota2));
+		aluno1.setNota3(Integer.valueOf(nota2));
+		aluno1.setNota4(Integer.valueOf(nota4));
 
 		System.out.println("Nome do aluno1 = " + aluno1.getNome());
 		System.out.println("Data de nascimento = " + aluno1.getDataNascimento());
@@ -30,7 +47,7 @@ public class Application {
 		System.out.println("Nome do pai = " + aluno1.getNomePai());
 		System.out.println("Data da matrícula  = " + aluno1.getDataMatricula());
 		System.out.println("Nome da escola = " + aluno1.getNomeEscola());
-		System.out.println(" Média da nota é = " + (int)aluno1.getMediaNota());
+		System.out.println("Média da nota é = " + (int)aluno1.getMediaNota());
 		System.out.println("Resultado = " + (aluno1.getAlunoAprovado()  ? "Aprovado" : "Reprovado"));
 		System.out.println("Resultado 2 = " + aluno1.getAlunoAprovado2());
 		
