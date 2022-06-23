@@ -30,7 +30,9 @@ public class Application {
 		System.out.println("Nome do pai = " + aluno1.getNomePai());
 		System.out.println("Data da matrícula  = " + aluno1.getDataMatricula());
 		System.out.println("Nome da escola = " + aluno1.getNomeEscola());
-		System.out.println("Média da nota é = " + (int)aluno1.getMediaNota());
+		System.out.println(" Média da nota é = " + (int)aluno1.getMediaNota());
+		System.out.println("Resultado = " + (aluno1.getAlunoAprovado()  ? "Aprovado" : "Reprovado"));
+		System.out.println("Resultado 2 = " + aluno1.getAlunoAprovado2());
 		
 		
 
