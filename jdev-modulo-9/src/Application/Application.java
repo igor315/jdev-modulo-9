@@ -32,30 +32,17 @@ public class Application {
 		aluno1.setNomeMae(mae);
 		aluno1.setNomePai(pai);
 		aluno1.setDataMatricula(matricula);
+		aluno1.setSerieMatriculado(serie);
 		aluno1.setNomeEscola(escola);
 		aluno1.setNota1(Integer.valueOf(nota1));
 		aluno1.setNota2(Integer.valueOf(nota2));
 		aluno1.setNota3(Integer.valueOf(nota2));
 		aluno1.setNota4(Integer.valueOf(nota4));
-
-		System.out.println("Nome do aluno1 = " + aluno1.getNome());
-		System.out.println("Data de nascimento = " + aluno1.getDataNascimento());
-		System.out.println("Idade = " + aluno1.getIdade());
-		System.out.println("Registro geral " + aluno1.getRegistroGeral());
-		System.out.println("Número CPF = " + aluno1.getNumeroCpf());
-		System.out.println("Nome da mãe = " + aluno1.getNomeMae());
-		System.out.println("Nome do pai = " + aluno1.getNomePai());
-		System.out.println("Data da matrícula  = " + aluno1.getDataMatricula());
-		System.out.println("Nome da escola = " + aluno1.getNomeEscola());
+		
+		System.out.println(aluno1.toString());
 		System.out.println("Média da nota é = " + (int)aluno1.getMediaNota());
 		System.out.println("Resultado = " + (aluno1.getAlunoAprovado()  ? "Aprovado" : "Reprovado"));
 		System.out.println("Resultado 2 = " + aluno1.getAlunoAprovado2());
-		
-		
-
-		Aluno aluno2 = new Aluno("Maria");
-		
-		Aluno aluno3 = new Aluno("Joao", 15);
 	
 	}
 
