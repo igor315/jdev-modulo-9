@@ -1,5 +1,8 @@
 package Application;
-
+/**
+ * @author jdev-treinamentos
+ * Os exemplos aqui estão como nas aulas do curso jdev treinamentos.
+ */
 import javax.swing.JOptionPane;
 
 import Classes.Aluno;
@@ -8,7 +11,7 @@ public class Application {
 
 	public static void main(String[] args) {
 		
-		String nome = JOptionPane.showInputDialog("Qual o nome do aluno?");
+		/*String nome = JOptionPane.showInputDialog("Qual o nome do aluno?");
 		String idade = JOptionPane.showInputDialog("Qual a idade?");
 		String dataNascimento = JOptionPane.showInputDialog("Data de nascimento?");
 		String rg = JOptionPane.showInputDialog("Registro Geral?");
@@ -42,8 +45,23 @@ public class Application {
 		System.out.println(aluno1.toString());
 		System.out.println("Média da nota é = " + (int)aluno1.getMediaNota());
 		System.out.println("Resultado = " + (aluno1.getAlunoAprovado()  ? "Aprovado" : "Reprovado"));
-		System.out.println("Resultado 2 = " + aluno1.getAlunoAprovado2());
+		System.out.println("Resultado 2 = " + aluno1.getAlunoAprovado2());*/
+		
+//		Equals e Haschcode (Diferenciar e comparar objetos)
 	
-	}
+		Aluno aluno1 = new Aluno();
+		aluno1.setNome("Igor");
+		aluno1.setNumeroCpf("123");
+		
+		Aluno aluno2 = new Aluno();
+		aluno2.setNome("Igor");
+		aluno2.setNumeroCpf("234");
+		
+		if(aluno1.equals(aluno2)) {
+			System.out.println("Alunos são iguais");
+		}else {
+			System.out.println("Alunos não são iguais");
+		}
+ 	}
 
 }

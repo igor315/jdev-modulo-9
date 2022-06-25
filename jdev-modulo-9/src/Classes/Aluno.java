@@ -1,5 +1,7 @@
 package Classes;
 
+import java.util.Objects;
+
 /**
  * @author jdev-treinamentos
  * Os exemplos aqui estão como nas aulas do curso jdev treinamentos.
@@ -179,6 +181,25 @@ public class Aluno {
 				+ serieMatriculado + ", nota1=" + nota1 + ", nota2=" + nota2 + ", nota3=" + nota3 + ", nota4=" + nota4
 				+ "]";
 	}
+
+//	Usamos o nome e o cpf neste caso para diferenciar um objeto do outro no caso os Alunos 
+	@Override
+	public int hashCode() {
+		return Objects.hash(nome, numeroCpf);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Aluno other = (Aluno) obj;
+		return Objects.equals(nome, other.nome) && Objects.equals(numeroCpf, other.numeroCpf);
+	}
+	
 	
 	
 }
