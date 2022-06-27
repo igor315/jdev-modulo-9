@@ -6,6 +6,7 @@ package Application;
 import javax.swing.JOptionPane;
 
 import Classes.Aluno;
+import Classes.Disciplina;
 
 public class Application {
 
@@ -22,14 +23,7 @@ public class Application {
 		String serie = JOptionPane.showInputDialog("Qual a série?");
 		String escola = JOptionPane.showInputDialog("Nome da escola?");
 		
-		String diciplina1 = JOptionPane.showInputDialog("Disciplina 1?");
-		String nota1 = JOptionPane.showInputDialog("Nota 1?");
-		String diciplina2 = JOptionPane.showInputDialog("Disciplina 2?");
-		String nota2 = JOptionPane.showInputDialog("Nota 2?");
-		String diciplina3 = JOptionPane.showInputDialog("Disciplina 3?");
-		String nota3 = JOptionPane.showInputDialog("Nota 3?");
-		String diciplina4 = JOptionPane.showInputDialog("Disciplina 4?");
-		String nota4 = JOptionPane.showInputDialog("Nota 4?");
+		
 		
 		Aluno aluno1 = new Aluno();
 		aluno1.setNome(nome);
@@ -43,15 +37,27 @@ public class Application {
 		aluno1.setSerieMatriculado(serie);
 		aluno1.setNomeEscola(escola);
 		
-		aluno1.getDisciplina().setNota1(Double.parseDouble(nota1));
-		aluno1.getDisciplina().setNota2(Double.parseDouble(nota2));
-		aluno1.getDisciplina().setNota3(Double.parseDouble(nota3));
-		aluno1.getDisciplina().setNota4(Double.parseDouble(nota4));
+		Disciplina disciplina1 = new Disciplina();
+		disciplina1.setDisciplina("Portgues");
+		disciplina1.setNota(91);
 		
-		aluno1.getDisciplina().setDisciplina1(diciplina1);
-		aluno1.getDisciplina().setDisciplina2(diciplina2);
-		aluno1.getDisciplina().setDisciplina3(diciplina3);
-		aluno1.getDisciplina().setDisciplina4(diciplina4);
+		Disciplina disciplina2 = new Disciplina();
+		disciplina2.setDisciplina("Matematica");
+		disciplina2.setNota(73);
+		
+		Disciplina disciplina3 = new Disciplina();
+		disciplina3.setDisciplina("Ingles");
+		disciplina3.setNota(62);
+		
+		Disciplina disciplina4 = new Disciplina();
+		disciplina4.setDisciplina("Historia");
+		disciplina4.setNota(84);
+		
+		aluno1.getDisciplinas().add(disciplina1);
+		aluno1.getDisciplinas().add(disciplina2);
+		aluno1.getDisciplinas().add(disciplina3);
+		aluno1.getDisciplinas().add(disciplina4);
+		
 		
 		System.out.println(aluno1.toString());
 		System.out.println("Média da nota é = " + (int)aluno1.getMediaNota());

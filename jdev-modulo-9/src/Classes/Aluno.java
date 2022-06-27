@@ -1,5 +1,7 @@
 package Classes;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 /**
@@ -19,17 +21,15 @@ public class Aluno {
 	String nomeEscola;
 	String serieMatriculado;
 	
-//	Dentro da classe Aluno temos que criar um novo objeto disciplina
-	private Disciplina disciplina = new Disciplina();
-	
-	public void setDisciplina(Disciplina disciplina) {
-		this.disciplina = disciplina;
+
+	private List<Disciplina> disciplinas = new ArrayList<Disciplina>();
+	public void setDisciplinas(List<Disciplina> disciplinas) {
+		this.disciplinas = disciplinas;
 	}
-	
-	public Disciplina getDisciplina() {
-		return disciplina;
+	public List<Disciplina> getDisciplinas() {
+		return disciplinas;
 	}
-	
+
 	public Aluno() {
 		
 	}
@@ -126,7 +126,14 @@ public class Aluno {
 	
 //	Método que retorna a média do aluno
 	public double getMediaNota() {
-		return (disciplina.getNota1() + disciplina.getNota2() + disciplina.getNota3() + disciplina.getNota4()) / 4;
+		
+		double somaNotas = 0;
+		
+		for(Disciplina disciplina : disciplinas) {
+			somaNotas += disciplina.getNota();
+		}
+		
+		return somaNotas / disciplinas.size();
 	}
 
 //	Método retorna true para aprovado e false para reprovado
@@ -153,7 +160,7 @@ public class Aluno {
 		return "Aluno [nome=" + nome + ", idade=" + idade + ", dataNascimento=" + dataNascimento + ", registroGeral="
 				+ registroGeral + ", numeroCpf=" + numeroCpf + ", nomeMae=" + nomeMae + ", nomePai=" + nomePai
 				+ ", dataMatricula=" + dataMatricula + ", nomeEscola=" + nomeEscola + ", serieMatriculado="
-				+ serieMatriculado + ", disciplina=" + disciplina + "]";
+				+ serieMatriculado + "]";
 	}
 
 	//	Usamos o nome e o cpf neste caso para diferenciar um objeto do outro no caso os Alunos 
