@@ -23,8 +23,6 @@ public class Application {
 		String serie = JOptionPane.showInputDialog("Qual a série?");
 		String escola = JOptionPane.showInputDialog("Nome da escola?");
 		
-		
-		
 		Aluno aluno1 = new Aluno();
 		aluno1.setNome(nome);
 		aluno1.setIdade(Integer.valueOf(idade));
@@ -37,26 +35,17 @@ public class Application {
 		aluno1.setSerieMatriculado(serie);
 		aluno1.setNomeEscola(escola);
 		
-		Disciplina disciplina1 = new Disciplina();
-		disciplina1.setDisciplina("Portgues");
-		disciplina1.setNota(91);
-		
-		Disciplina disciplina2 = new Disciplina();
-		disciplina2.setDisciplina("Matematica");
-		disciplina2.setNota(73);
-		
-		Disciplina disciplina3 = new Disciplina();
-		disciplina3.setDisciplina("Ingles");
-		disciplina3.setNota(62);
-		
-		Disciplina disciplina4 = new Disciplina();
-		disciplina4.setDisciplina("Historia");
-		disciplina4.setNota(84);
-		
-		aluno1.getDisciplinas().add(disciplina1);
-		aluno1.getDisciplinas().add(disciplina2);
-		aluno1.getDisciplinas().add(disciplina3);
-		aluno1.getDisciplinas().add(disciplina4);
+//		For Dinamico para pegar as disciplinas do Aluno
+		for (int pos = 1; pos <= 4; pos++) {
+			String nomeDisciplina =  JOptionPane.showInputDialog("Qual o nome da Disciplina " + pos + "?");
+			String notaDisciplina =  JOptionPane.showInputDialog("Nota da Disciplina " + pos + "?");
+			
+			Disciplina disciplina = new Disciplina();
+			disciplina.setDisciplina(nomeDisciplina);
+			disciplina.setNota(Double.valueOf(notaDisciplina));
+			
+			aluno1.getDisciplinas().add(disciplina);
+		}
 		
 		
 		System.out.println(aluno1.toString());
