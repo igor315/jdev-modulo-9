@@ -47,6 +47,14 @@ public class Application {
 			aluno1.getDisciplinas().add(disciplina);
 		}
 		
+		int escolha = JOptionPane.showConfirmDialog(null, "Deseja remover alguma disciplina?");
+		
+		if(escolha == 0) {
+			String removerDisciplina = JOptionPane.showInputDialog("Qual disciplina deseja remover 1, 2, 3 ou 4?");
+			aluno1.getDisciplinas().remove(Integer.valueOf(removerDisciplina).intValue() - 1);
+			
+		}
+		
 		
 		System.out.println(aluno1.toString());
 		System.out.println("Média da nota é = " + (int)aluno1.getMediaNota());

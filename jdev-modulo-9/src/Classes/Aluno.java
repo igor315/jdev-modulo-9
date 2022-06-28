@@ -160,9 +160,8 @@ public class Aluno {
 		return "Aluno [nome=" + nome + ", idade=" + idade + ", dataNascimento=" + dataNascimento + ", registroGeral="
 				+ registroGeral + ", numeroCpf=" + numeroCpf + ", nomeMae=" + nomeMae + ", nomePai=" + nomePai
 				+ ", dataMatricula=" + dataMatricula + ", nomeEscola=" + nomeEscola + ", serieMatriculado="
-				+ serieMatriculado + "]";
+				+ serieMatriculado + ", disciplinas=" + disciplinas + "]";
 	}
-
 	//	Usamos o nome e o cpf neste caso para diferenciar um objeto do outro no caso os Alunos 
 	@Override
 	public int hashCode() {
