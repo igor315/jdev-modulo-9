@@ -1,4 +1,8 @@
 package Application;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+
 /**
  * @author jdev-treinamentos
  * Os exemplos aqui estão como nas aulas do curso jdev treinamentos.
@@ -12,7 +16,11 @@ public class Application {
 
 	public static void main(String[] args) {
 		
-		String nome = JOptionPane.showInputDialog("Qual o nome do aluno?");
+		List<Aluno> alunos = new ArrayList<Aluno>();
+		
+		for(int qtd = 1; qtd <= 2; qtd++) {
+		
+		String nome = JOptionPane.showInputDialog("Qual o nome do aluno "+qtd+"?");
 		/*String idade = JOptionPane.showInputDialog("Qual a idade?");
 		String dataNascimento = JOptionPane.showInputDialog("Data de nascimento?");
 		String rg = JOptionPane.showInputDialog("Registro Geral?");
@@ -23,8 +31,8 @@ public class Application {
 		String serie = JOptionPane.showInputDialog("Qual a série?");
 		String escola = JOptionPane.showInputDialog("Nome da escola?");*/
 		
-		Aluno aluno1 = new Aluno();
-		aluno1.setNome(nome);
+		Aluno aluno = new Aluno();
+		aluno.setNome(nome);
 		/*aluno1.setIdade(Integer.valueOf(idade));
 		aluno1.setDataNascimento(dataNascimento);
 		aluno1.setRegistroGeral(rg);
@@ -44,7 +52,7 @@ public class Application {
 			disciplina.setDisciplina(nomeDisciplina);
 			disciplina.setNota(Double.valueOf(notaDisciplina));
 			
-			aluno1.getDisciplinas().add(disciplina);
+			aluno.getDisciplinas().add(disciplina);
 		}
 		
 		int escolha = JOptionPane.showConfirmDialog(null, "Deseja remover alguma disciplina?");
@@ -56,18 +64,27 @@ public class Application {
 			
 			while(continuarRemover == 0){
 			String removerDisciplina = JOptionPane.showInputDialog("Qual disciplina deseja remover 1, 2, 3 ou 4?");
-			aluno1.getDisciplinas().remove(Integer.valueOf(removerDisciplina).intValue() - posicao);
+			aluno.getDisciplinas().remove(Integer.valueOf(removerDisciplina).intValue() - posicao);
 			posicao ++;
 			continuarRemover = JOptionPane.showConfirmDialog(null, "Deseja remover outra disciplina?");
 			}
 			
 		}
 		
+		alunos.add(aluno);
 		
-		System.out.println(aluno1.toString());
-		System.out.println("Média da nota é = " + (int)aluno1.getMediaNota());
-		System.out.println("Resultado = " + (aluno1.getAlunoAprovado()  ? "Aprovado" : "Reprovado"));
-		System.out.println("Resultado 2 = " + aluno1.getAlunoAprovado2());
+		}
+		
+		for (Aluno aluno : alunos) {
+			
+			System.out.println(aluno);
+			System.out.println("Média da nota é = " + (int)aluno.getMediaNota());
+			System.out.println("Resultado = " + (aluno.getAlunoAprovado()  ? "Aprovado" : "Reprovado"));
+			System.out.println("Resultado 2 = " + aluno.getAlunoAprovado2());
+			System.out.println("--------------------------------------------------------------------------------------");
+			
+		}
+		
 		
  	}
 
