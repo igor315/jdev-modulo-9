@@ -77,12 +77,14 @@ public class Application {
 		
 		for (Aluno aluno : alunos) {
 			
+			if(aluno.getNome().equalsIgnoreCase("Igor")) {
 			System.out.println(aluno);
 			System.out.println("Média da nota é = " + (int)aluno.getMediaNota());
 			System.out.println("Resultado = " + (aluno.getAlunoAprovado()  ? "Aprovado" : "Reprovado"));
 			System.out.println("Resultado 2 = " + aluno.getAlunoAprovado2());
 			System.out.println("--------------------------------------------------------------------------------------");
-			
+			break;
+			}
 		}
 		
 		
