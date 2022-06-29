@@ -53,6 +53,7 @@ public class Application {
 			
 			int continuarRemover = 0;
 			int posicao = 1;
+			
 			while(continuarRemover == 0){
 			String removerDisciplina = JOptionPane.showInputDialog("Qual disciplina deseja remover 1, 2, 3 ou 4?");
 			aluno1.getDisciplinas().remove(Integer.valueOf(removerDisciplina).intValue() - posicao);
