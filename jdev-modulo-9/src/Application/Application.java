@@ -13,7 +13,7 @@ public class Application {
 	public static void main(String[] args) {
 		
 		String nome = JOptionPane.showInputDialog("Qual o nome do aluno?");
-		String idade = JOptionPane.showInputDialog("Qual a idade?");
+		/*String idade = JOptionPane.showInputDialog("Qual a idade?");
 		String dataNascimento = JOptionPane.showInputDialog("Data de nascimento?");
 		String rg = JOptionPane.showInputDialog("Registro Geral?");
 		String cpf = JOptionPane.showInputDialog("Qual o CPF?");
@@ -21,11 +21,11 @@ public class Application {
 		String pai = JOptionPane.showInputDialog("Nome do pai?");
 		String matricula = JOptionPane.showInputDialog("Data da matricula?");
 		String serie = JOptionPane.showInputDialog("Qual a série?");
-		String escola = JOptionPane.showInputDialog("Nome da escola?");
+		String escola = JOptionPane.showInputDialog("Nome da escola?");*/
 		
 		Aluno aluno1 = new Aluno();
 		aluno1.setNome(nome);
-		aluno1.setIdade(Integer.valueOf(idade));
+		/*aluno1.setIdade(Integer.valueOf(idade));
 		aluno1.setDataNascimento(dataNascimento);
 		aluno1.setRegistroGeral(rg);
 		aluno1.setNumeroCpf(cpf);
@@ -33,7 +33,7 @@ public class Application {
 		aluno1.setNomePai(pai);
 		aluno1.setDataMatricula(matricula);
 		aluno1.setSerieMatriculado(serie);
-		aluno1.setNomeEscola(escola);
+		aluno1.setNomeEscola(escola);*/
 		
 //		For Dinamico para pegar as disciplinas do Aluno
 		for (int pos = 1; pos <= 4; pos++) {
@@ -50,8 +50,15 @@ public class Application {
 		int escolha = JOptionPane.showConfirmDialog(null, "Deseja remover alguma disciplina?");
 		
 		if(escolha == 0) {
+			
+			int continuarRemover = 0;
+			int posicao = 1;
+			while(continuarRemover == 0){
 			String removerDisciplina = JOptionPane.showInputDialog("Qual disciplina deseja remover 1, 2, 3 ou 4?");
-			aluno1.getDisciplinas().remove(Integer.valueOf(removerDisciplina).intValue() - 1);
+			aluno1.getDisciplinas().remove(Integer.valueOf(removerDisciplina).intValue() - posicao);
+			posicao ++;
+			continuarRemover = JOptionPane.showConfirmDialog(null, "Deseja remover outra disciplina?");
+			}
 			
 		}
 		
