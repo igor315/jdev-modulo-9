@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
+import Constantes.StatusAluno;
+
 /**
  * @author jdev-treinamentos Os exemplos aqui estão como nas aulas do curso jdev
  *         treinamentos.
@@ -151,12 +153,12 @@ public class Aluno {
 		double media = this.getMediaNota();
 		if (media >= 50) {
 			if (media >= 70) {
-				return "Aluno Aprovado";
+				return StatusAluno.APROVADO;
 			} else {
-				return "Aluno em Recuperação";
+				return StatusAluno.RECUPERACAO;
 			}
 		} else {
-			return "Aluno reprovado";
+			return StatusAluno.REPROVADO;
 		}
 	}
 
