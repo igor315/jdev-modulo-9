@@ -19,7 +19,7 @@ public class Application {
 
 		List<Aluno> alunos = new ArrayList<Aluno>();
 
-		for (int qtd = 1; qtd <= 1; qtd++) {
+		for (int qtd = 1; qtd <= 2; qtd++) {
 
 			String nome = JOptionPane.showInputDialog("Qual o nome do aluno " + qtd + "?");
 			/*
@@ -45,7 +45,7 @@ public class Application {
 			 */
 
 //		For Dinamico para pegar as disciplinas do Aluno
-			for (int pos = 1; pos <= 2; pos++) {
+			for (int pos = 1; pos <= 1; pos++) {
 				String nomeDisciplina = JOptionPane.showInputDialog("Qual o nome da Disciplina " + pos + "?");
 				String notaDisciplina = JOptionPane.showInputDialog("Nota da Disciplina " + pos + "?");
 
@@ -81,6 +81,21 @@ public class Application {
 			
 			Aluno aluno = alunos.get(pos);
 			
+			if(aluno.getNome().equalsIgnoreCase("Igor")) {
+				
+				Aluno trocar = new Aluno();
+				trocar.setNome("Marcos");
+				
+				Disciplina disciplina = new Disciplina();
+				disciplina.setDisciplina("Matematica");
+				disciplina.setNota(95);
+				
+				trocar.getDisciplinas().add(disciplina);
+				
+				alunos.set(pos, trocar);
+				aluno = alunos.get(pos);
+			}
+			
 			System.out.println("Aluno = " + aluno.getNome());
 			System.out.println("Média do aluno = " + aluno.getMediaNota());
 			System.out.println("Resultado = + " + aluno.getAlunoAprovado2());
@@ -89,7 +104,7 @@ public class Application {
 			for (int posd = 0; posd < aluno.getDisciplinas().size(); posd ++) {
 				
 				Disciplina disciplina = aluno.getDisciplinas().get(posd);
-				System.out.println("Materia = " + disciplina.getDisciplina() + " Nota = " + disciplina.getDisciplina());
+				System.out.println("Materia = " + disciplina.getDisciplina() + " Nota = " + disciplina.getNota());
 			}
 			
 		}
