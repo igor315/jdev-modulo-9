@@ -17,6 +17,11 @@ import Constantes.StatusAluno;
 public class Application {
 
 	public static void main(String[] args) {
+		
+		String login = JOptionPane.showInputDialog("Informe o login");
+		String senha = JOptionPane.showInputDialog("Informe a senha");
+		
+		if(login.equalsIgnoreCase("admin") && senha.equalsIgnoreCase("admin")) {
 
 		List<Aluno> alunos = new ArrayList<Aluno>();
 		
@@ -116,6 +121,10 @@ public class Application {
 		for (Aluno aluno : maps.get(StatusAluno.REPROVADO)) {
 			System.out.println("Nome = " + aluno.getNome() + " Resultado = " + aluno.getAlunoAprovado2() + " com média de = " + aluno.getMediaNota());
 		}
+		
+	}else {
+		JOptionPane.showMessageDialog(null, "As credenciais estão incorretas, tente novamente!");
 	}
-
+		
+	}
 }
